@@ -1,0 +1,15 @@
+{
+  "pacing_profiles": [
+    {"value": "Even", "description": "Distribute impressions evenly across campaign duration"},
+    {"value": "Front-loaded", "description": "Higher delivery in first half, taper in second half"},
+    {"value": "Back-loaded", "description": "Lower delivery early, ramp up toward end"},
+    {"value": "ASAP", "description": "Deliver as fast as possible (use for short flights)"}
+  ],
+  "catchup_boost": {"options": ["Yes", "No"], "description": "If behind pace, boost delivery to catch up"},
+  "frequency_types": [
+    {"value": "Set a Frequency Type", "description": "Custom frequency cap applied"},
+    {"value": "Default Uncapped Frequency", "description": "No frequency limit (used for SOV)"}
+  ],
+  "frequency_presets": ["1/24hrs", "2/24hrs", "3/24hrs", "5/24hrs", "7/24hrs", "1/7days", "3/7days", "5/7days"]
+}
+
