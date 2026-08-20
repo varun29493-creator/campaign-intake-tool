@@ -1,0 +1,16 @@
+{
+  "audience_types": [
+    {"type": "In-Market", "code": "#IM#", "description": "Users actively shopping in a category", "segment_pattern": "{Category}_InMarket_{LookbackDays}D"},
+    {"type": "Affinity", "code": "#AFN#", "description": "Users with long-term interest", "segment_pattern": "{Category}_Affinity_{LookbackDays}D"},
+    {"type": "Lifestyle", "code": "#LS#", "description": "Users matching a lifestyle profile", "segment_pattern": "{Lifestyle}_Lifestyle_{LookbackDays}D"},
+    {"type": "Competition Retargeting", "code": "#CompRT#", "description": "Users who viewed/purchased competitor products", "segment_pattern": "{Competitor}_Viewers_{LookbackDays}D"},
+    {"type": "Brand Views/Purchases or Product Views/Purchases", "code": "#BrandRT#", "description": "Viewed brand/product but did not purchase", "segment_pattern": "ASIN_ViewersPurchasers_{LookbackDays}D"},
+    {"type": "Brand Purchasers or Product Purchasers", "code": "#Repeat#", "description": "Past purchasers for repeat/cross-sell", "segment_pattern": "ASIN_Purchasers_{LookbackDays}D"},
+    {"type": "Contextual", "code": "#Contextual#", "description": "Based on page content", "segment_pattern": "{Category}_Contextual"},
+    {"type": "SOV", "code": "#Open#", "description": "No audience targeting (SOV deals)", "segment_pattern": ""}
+  ],
+  "lookback_options": ["7D", "14D", "30D", "60D", "90D"]
+}
+
+
+

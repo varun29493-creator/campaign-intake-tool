@@ -1,0 +1,8 @@
+{
+  "packages": [
+    {"name": "Class 1: AMZN IN Mobile Window Display 1 SOV Package", "size": "Display|855x1368", "placements": ["WD-1 SOV"], "screen": "Mobile", "channel": "Amazon.in", "class": 1, "min_sov": 10, "max_sov": 100, "sov_increment": 10},
+    {"name": "Class 1: AMZN IN Mobile BTF SOV Package", "size": "Display|600x500", "placements": ["mBTF SOV"], "screen": "Mobile", "channel": "Amazon.in", "class": 1, "min_sov": 10, "max_sov": 100, "sov_increment": 10},
+    {"name": "Class 1: AMZN IN Desktop ATF SOV Package", "size": "Display|970x250", "placements": ["dATF SOV"], "screen": "Desktop", "channel": "Amazon.in", "class": 1, "min_sov": 10, "max_sov": 100, "sov_increment": 10},
+    {"name": "Class 1: AMZN IN Fire TV Feature Rotator SOV Package", "size": "Video|1920x1080", "placements": ["FTV_FR SOV"], "screen": "CTV", "channel": "Fire TV", "class": 1, "min_sov": 10, "max_sov": 100, "sov_increment": 10}
+  ]
+}
