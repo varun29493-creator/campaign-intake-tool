@@ -1,0 +1,39 @@
+{
+  "description": "Maps media plan fields to CSD sheet fields",
+  "sheet_3_campaign_details": {
+    "campaign_name": {"source": "header.campaign_name", "required": true},
+    "campaign_type": {"source": "constant", "value": "Billable"},
+    "salesforce_opportunity_id": {"source": "header.opportunity_id", "required": true},
+    "advertiser_category": {"source": "derived", "rule": "NE=Non Vendor, else=Vendor"},
+    "account_manager": {"source": "header.account_manager", "required": true},
+    "account_executive": {"source": "header.account_executive", "required": true},
+    "product_line": {"source": "header.product_category"},
+    "currency": {"source": "constant", "value": "INR"},
+    "po_number": {"source": "header.po_number", "required": true},
+    "timezone": {"source": "constant", "value": "Asia/Kolkata"},
+    "start_date_time": {"source": "header.campaign_start_date", "format": "D-MMM h:mm A"},
+    "end_date_time": {"source": "header.campaign_end_date", "format": "D-MMM h:mm A"},
+    "portfolio": {"source": "constant", "value": "Ungrouped"}
+  },
+  "sheet_4_order_details": {
+    "package_number": {"source": "line_item_index + 1"},
+    "product_type": {"source": "line_item.deal_type"},
+    "product_package": {"source": "line_item.package"},
+    "name": {"source": "derived", "rule": "campaign_name + _Pkg{N}"},
+    "start_date_time": {"source": "line_item.start_date", "format": "D-MMM h:mm A"},
+    "end_date_time": {"source": "line_item.end_date", "format": "D-MMM h:mm A"},
+    "requested_budget": {"source": "line_item.estimated_cost"},
+    "takeover_percentage": {"source": "line_item.sov_percentage", "condition": "only if SOV"},
+    "order_rate": {"source": "packages_cpm.rate lookup", "condition": "only if CPM"},
+    "audience_targeting": {"source": "line_item.audience_type"},
+    "audience_tag": {"source": "audience_codes lookup"},
+    "targeting": {"source": "line_item.segment_string"},
+    "frequency_cap": {"source": "line_item.frequency_type"},
+    "frequency_value": {"source": "line_item.frequency_value"},
+    "pacing_profile": {"source": "line_item.pacing_profile"},
+    "pacing_catchup_boost": {"source": "line_item.pacing_catchup_boost"},
+    "primary_goal": {"source": "header.primary_goal"},
+    "primary_goal_value": {"source": "header.primary_goal_value"}
+  },
+  "sheet_6_asin_list": {"asins": {"source": "asins array", "note": "One ASIN per row"}}
+}
