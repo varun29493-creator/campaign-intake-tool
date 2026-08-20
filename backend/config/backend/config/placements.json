@@ -1,0 +1,26 @@
+{
+  "placements": {
+    "Mobile": [
+      {"code": "WD 1", "name": "Window Display 1 (Hero)", "position": "ATF", "size": "855x1368"},
+      {"code": "mBTF", "name": "Mobile Below The Fold", "position": "BTF", "size": "600x500"},
+      {"code": "mDetail", "name": "Mobile Detail Page", "position": "Detail", "size": "600x500"},
+      {"code": "mBrowse", "name": "Mobile Browse Page", "position": "Browse", "size": "600x500"},
+      {"code": "mThankYou", "name": "Mobile Thank You Page", "position": "ThankYou", "size": "600x500"},
+      {"code": "mDeals", "name": "Mobile Deals Page", "position": "Deals", "size": "600x500"},
+      {"code": "mSearch", "name": "Mobile Search Results", "position": "Search", "size": "600x500"}
+    ],
+    "Desktop": [
+      {"code": "dATF", "name": "Desktop Above The Fold", "position": "ATF", "size": "970x250"},
+      {"code": "dBTF", "name": "Desktop Below The Fold", "position": "BTF", "size": "300x250"},
+      {"code": "dDetail", "name": "Desktop Detail Page", "position": "Detail", "size": "300x250"},
+      {"code": "dBrowse", "name": "Desktop Browse Page", "position": "Browse", "size": "300x250"}
+    ],
+    "CTV": [
+      {"code": "FTV_FR", "name": "Fire TV Feature Rotator", "position": "Home", "size": "1920x1080"},
+      {"code": "FTV_Inline", "name": "Fire TV Inline Banner", "position": "Home", "size": "1920x1080"}
+    ],
+    "Cross-Screen": [
+      {"code": "IMDb_ROS", "name": "IMDb Run of Site", "position": "ROS", "size": "Various"}
+    ]
+  }
+}
