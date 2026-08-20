@@ -1,0 +1,12 @@
+{
+  "ne_sub_categories": ["Credit Card", "Personal Loan", "Insurance", "Mutual Funds", "Auto", "Telecom", "Travel", "Food Delivery", "EdTech", "Streaming", "Real Estate", "Government"],
+  "ne_pl_codes": ["Amazon Bill Payments and Recharges-1820", "Subscribe and Save-1830", "Amazon Fresh-1825", "Amazon Prime-1810", "Amazon Pay-1840", "Kindle-1850", "Audible-1855", "Amazon miniTV-1860"],
+  "ne_specific_rules": {
+    "requires_pl_code": true,
+    "requires_sub_category": true,
+    "allowed_inventory": ["O&O"],
+    "asin_required": false,
+    "landing_page_must_be_external": true
+  }
+}
+
