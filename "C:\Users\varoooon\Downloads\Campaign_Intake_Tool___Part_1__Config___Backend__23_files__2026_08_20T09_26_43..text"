@@ -1,1 +1,737 @@
+{
+  "categories": [
+    {"code": "CPG", "name": "Consumer Packaged Goods", "advertisers": ["IN - Hindustan Unilever", "IN - P&G India", "IN - Nestle India", "IN - ITC Limited", "IN - Reckitt", "IN - Colgate-Palmolive", "IN - Marico", "IN - Dabur", "IN - Godrej Consumer", "IN - Emami"]},
+    {"code": "OHL", "name": "Online & Hardlines", "advertisers": ["IN - Boat Lifestyle", "IN - Noise", "IN - Fastrack", "IN - Titan", "IN - Wildcraft"]},
+    {"code": "SF", "name": "Softlines & Fashion", "advertisers": ["IN - Nike India", "IN - Adidas India", "IN - Puma India", "IN - Allen Solly", "IN - Van Heusen"]},
+    {"code": "NE", "name": "Non-Endemic", "advertisers": ["IN - HDFC Bank", "IN - ICICI Bank", "IN - SBI", "IN - Bajaj Finance", "IN - Swiggy", "IN - Zomato", "IN - MakeMyTrip", "IN - OYO"]},
+    {"code": "CEPC - LAF", "name": "CE/PC - Large Appliances & Furniture", "advertisers": ["IN - LG Electronics", "IN - Whirlpool", "IN - Havells", "IN - Godrej Appliances", "IN - Voltas"]},
+    {"code": "CEPC - WL", "name": "CE/PC - Wireless & Laptops", "advertisers": ["IN - Samsung Electronics", "IN - Apple India", "IN - OnePlus", "IN - Xiaomi", "IN - Realme", "IN - Vivo", "IN - OPPO", "IN - HP India", "IN - Lenovo India", "IN - Dell India"]},
+    {"code": "CEPC - PC", "name": "CE/PC - Personal Computing", "advertisers": ["IN - HP India", "IN - Lenovo India", "IN - Dell India", "IN - ASUS India", "IN - Acer India"]},
+    {"code": "CEPC - CE", "name": "CE/PC - Consumer Electronics", "advertisers": ["IN - Sony India", "IN - JBL India", "IN - Bose India", "IN - Samsung Electronics"]},
+    {"code": "CEPC - HE", "name": "CE/PC - Home Entertainment", "advertisers": ["IN - Samsung Electronics", "IN - LG Electronics", "IN - Sony India", "IN - TCL India"]},
+    {"code": "CEPC - WB", "name": "CE/PC - Wearables", "advertisers": ["IN - Apple India", "IN - Samsung Electronics", "IN - Boat Lifestyle", "IN - Noise", "IN - Fitbit India"]}
+  ]
+}
+
+{
+  "packages": [
+    {"name": "AMZN IN Mobile Homepage Hero Package", "rate": 210, "size": "Display|855x1368", "placements": ["WD 1"], "screen": "Mobile", "channel": "Amazon.in", "inventory": "O&O"},
+    {"name": "AMZN IN Mobile Homepage BTF Package", "rate": 100, "size": "Display|600x500", "placements": ["mBTF"], "screen": "Mobile", "channel": "Amazon.in", "inventory": "O&O"},
+    {"name": "AMZN IN Mobile Homepage BTF Package - Non Endemic", "rate": 200, "size": "Display|600x500", "placements": ["mBTF NE"], "screen": "Mobile", "channel": "Amazon.in", "inventory": "O&O"},
+    {"name": "AMZN IN Mobile Homepage Cards Package", "rate": 130, "size": "Display|600x500", "placements": ["mBTF"], "screen": "Mobile", "channel": "Amazon.in", "inventory": "O&O"},
+    {"name": "AMZN IN Mobile Contextual Package", "rate": 75, "size": "Display|600x500", "placements": ["mDetail", "mBrowse"], "screen": "Mobile", "channel": "Amazon.in", "inventory": "O&O"},
+    {"name": "AMZN IN MobileThankYou and Deals Package", "rate": 100, "size": "Display|600x500", "placements": ["mThankYou", "mDeals"], "screen": "Mobile", "channel": "Amazon.in", "inventory": "O&O"},
+    {"name": "AMZN IN Desktop ATF Package", "rate": 200, "size": "Display|970x250", "placements": ["dATF"], "screen": "Desktop", "channel": "Amazon.in", "inventory": "O&O"},
+    {"name": "AMZN IN Desktop Contextual Package", "rate": 75, "size": "Display|300x250", "placements": ["dDetail", "dBrowse"], "screen": "Desktop", "channel": "Amazon.in", "inventory": "O&O"},
+    {"name": "AMZN IN Amazon Pay Package", "rate": 150, "size": "Display|600x500", "placements": ["AmazonPay"], "screen": "Mobile", "channel": "Amazon.in", "inventory": "O&O"},
+    {"name": "AMZN IN Fire TV Inline Home", "rate": 100, "size": "Video|1920x1080", "placements": ["FTV_Inline"], "screen": "CTV", "channel": "Fire TV", "inventory": "O&O"},
+    {"name": "AMZN IN Fire TV Feature Rotator Home Guranteed", "rate": 250, "size": "Video|1920x1080", "placements": ["FTV_FR"], "screen": "CTV", "channel": "Fire TV", "inventory": "O&O"},
+    {"name": "Reach (CPM) : IMDb IN Cross-Screen ROS Package", "rate": 75, "size": "Display|300x250, Video|Various", "placements": ["IMDb_ROS"], "screen": "Cross-Screen", "channel": "IMDb", "inventory": "3P"}
+  ]
+}
+
+{
+  "packages": [
+    {"name": "Class 1: AMZN IN Mobile Window Display 1 SOV Package", "size": "Display|855x1368", "placements": ["WD-1 SOV"], "screen": "Mobile", "channel": "Amazon.in", "class": 1, "min_sov": 10, "max_sov": 100, "sov_increment": 10},
+    {"name": "Class 1: AMZN IN Mobile BTF SOV Package", "size": "Display|600x500", "placements": ["mBTF SOV"], "screen": "Mobile", "channel": "Amazon.in", "class": 1, "min_sov": 10, "max_sov": 100, "sov_increment": 10},
+    {"name": "Class 1: AMZN IN Desktop ATF SOV Package", "size": "Display|970x250", "placements": ["dATF SOV"], "screen": "Desktop", "channel": "Amazon.in", "class": 1, "min_sov": 10, "max_sov": 100, "sov_increment": 10},
+    {"name": "Class 1: AMZN IN Fire TV Feature Rotator SOV Package", "size": "Video|1920x1080", "placements": ["FTV_FR SOV"], "screen": "CTV", "channel": "Fire TV", "class": 1, "min_sov": 10, "max_sov": 100, "sov_increment": 10}
+  ]
+}
+{
+  "audience_types": [
+    {"type": "In-Market", "code": "#IM#", "description": "Users actively shopping in a category", "segment_pattern": "{Category}_InMarket_{LookbackDays}D"},
+    {"type": "Affinity", "code": "#AFN#", "description": "Users with long-term interest", "segment_pattern": "{Category}_Affinity_{LookbackDays}D"},
+    {"type": "Lifestyle", "code": "#LS#", "description": "Users matching a lifestyle profile", "segment_pattern": "{Lifestyle}_Lifestyle_{LookbackDays}D"},
+    {"type": "Competition Retargeting", "code": "#CompRT#", "description": "Users who viewed/purchased competitor products", "segment_pattern": "{Competitor}_Viewers_{LookbackDays}D"},
+    {"type": "Brand Views/Purchases or Product Views/Purchases", "code": "#BrandRT#", "description": "Viewed brand/product but did not purchase", "segment_pattern": "ASIN_ViewersPurchasers_{LookbackDays}D"},
+    {"type": "Brand Purchasers or Product Purchasers", "code": "#Repeat#", "description": "Past purchasers for repeat/cross-sell", "segment_pattern": "ASIN_Purchasers_{LookbackDays}D"},
+    {"type": "Contextual", "code": "#Contextual#", "description": "Based on page content", "segment_pattern": "{Category}_Contextual"},
+    {"type": "SOV", "code": "#Open#", "description": "No audience targeting (SOV deals)", "segment_pattern": ""}
+  ],
+  "lookback_options": ["7D", "14D", "30D", "60D", "90D"]
+}
+
+
+{
+  "placements": {
+    "Mobile": [
+      {"code": "WD 1", "name": "Window Display 1 (Hero)", "position": "ATF", "size": "855x1368"},
+      {"code": "mBTF", "name": "Mobile Below The Fold", "position": "BTF", "size": "600x500"},
+      {"code": "mDetail", "name": "Mobile Detail Page", "position": "Detail", "size": "600x500"},
+      {"code": "mBrowse", "name": "Mobile Browse Page", "position": "Browse", "size": "600x500"},
+      {"code": "mThankYou", "name": "Mobile Thank You Page", "position": "ThankYou", "size": "600x500"},
+      {"code": "mDeals", "name": "Mobile Deals Page", "position": "Deals", "size": "600x500"},
+      {"code": "mSearch", "name": "Mobile Search Results", "position": "Search", "size": "600x500"}
+    ],
+    "Desktop": [
+      {"code": "dATF", "name": "Desktop Above The Fold", "position": "ATF", "size": "970x250"},
+      {"code": "dBTF", "name": "Desktop Below The Fold", "position": "BTF", "size": "300x250"},
+      {"code": "dDetail", "name": "Desktop Detail Page", "position": "Detail", "size": "300x250"},
+      {"code": "dBrowse", "name": "Desktop Browse Page", "position": "Browse", "size": "300x250"}
+    ],
+    "CTV": [
+      {"code": "FTV_FR", "name": "Fire TV Feature Rotator", "position": "Home", "size": "1920x1080"},
+      {"code": "FTV_Inline", "name": "Fire TV Inline Banner", "position": "Home", "size": "1920x1080"}
+    ],
+    "Cross-Screen": [
+      {"code": "IMDb_ROS", "name": "IMDb Run of Site", "position": "ROS", "size": "Various"}
+    ]
+  }
+}
+
+
+{
+  "ne_sub_categories": ["Credit Card", "Personal Loan", "Insurance", "Mutual Funds", "Auto", "Telecom", "Travel", "Food Delivery", "EdTech", "Streaming", "Real Estate", "Government"],
+  "ne_pl_codes": ["Amazon Bill Payments and Recharges-1820", "Subscribe and Save-1830", "Amazon Fresh-1825", "Amazon Prime-1810", "Amazon Pay-1840", "Kindle-1850", "Audible-1855", "Amazon miniTV-1860"],
+  "ne_specific_rules": {
+    "requires_pl_code": true,
+    "requires_sub_category": true,
+    "allowed_inventory": ["O&O"],
+    "asin_required": false,
+    "landing_page_must_be_external": true
+  }
+}
+
+
+{
+  "primary_goals": [
+    {"value": "Viewability rate", "description": "% of impressions viewable (IAB standard)"},
+    {"value": "Click through rate (CTR)", "description": "Clicks / Impressions"},
+    {"value": "Detail Page view rate (DPVR)", "description": "DPV / Impressions"},
+    {"value": "Cost per detail page view (CPDPV)", "description": "Spend / Detail Page Views"},
+    {"value": "Purchase rate", "description": "Purchases / Impressions"},
+    {"value": "Return on ad spend (ROAS)", "description": "Revenue / Ad Spend"},
+    {"value": "Video completion rate (VCR)", "description": "Completed views / Impressions"},
+    {"value": "Cost per completed view (CPCV)", "description": "Spend / Completed Views"}
+  ],
+  "secondary_goals": [
+    {"value": "Click through rate (CTR)", "description": "Clicks / Impressions"},
+    {"value": "Detail Page view rate (DPVR)", "description": "DPV / Impressions"},
+    {"value": "Cost per detail page view (CPDPV)", "description": "Spend / DPV"},
+    {"value": "Purchase rate", "description": "Purchases / Impressions"},
+    {"value": "Return on ad spend (ROAS)", "description": "Revenue / Ad Spend"},
+    {"value": "Subscribe & Save subscriptions", "description": "SnS subscriptions driven"}
+  ],
+  "campaign_objectives": [
+    {"code": "AWR", "name": "Awareness", "recommended_goal": "Viewability rate"},
+    {"code": "CON", "name": "Consideration", "recommended_goal": "Detail Page view rate (DPVR)"},
+    {"code": "COV", "name": "Conversion", "recommended_goal": "Purchase rate"},
+    {"code": "NCA", "name": "New Customer Acquisition", "recommended_goal": "Detail Page view rate (DPVR)"},
+    {"code": "LEADGEN", "name": "Lead Generation", "recommended_goal": "Click through rate (CTR)"},
+    {"code": "RETENTION", "name": "Retention / Repeat Purchase", "recommended_goal": "Purchase rate"}
+  ]
+}
+
+
+{
+  "pacing_profiles": [
+    {"value": "Even", "description": "Distribute impressions evenly across campaign duration"},
+    {"value": "Front-loaded", "description": "Higher delivery in first half, taper in second half"},
+    {"value": "Back-loaded", "description": "Lower delivery early, ramp up toward end"},
+    {"value": "ASAP", "description": "Deliver as fast as possible (use for short flights)"}
+  ],
+  "catchup_boost": {"options": ["Yes", "No"], "description": "If behind pace, boost delivery to catch up"},
+  "frequency_types": [
+    {"value": "Set a Frequency Type", "description": "Custom frequency cap applied"},
+    {"value": "Default Uncapped Frequency", "description": "No frequency limit (used for SOV)"}
+  ],
+  "frequency_presets": ["1/24hrs", "2/24hrs", "3/24hrs", "5/24hrs", "7/24hrs", "1/7days", "3/7days", "5/7days"]
+}
+
+
+{
+  "description": "Maps media plan fields to CSD sheet fields",
+  "sheet_3_campaign_details": {
+    "campaign_name": {"source": "header.campaign_name", "required": true},
+    "campaign_type": {"source": "constant", "value": "Billable"},
+    "salesforce_opportunity_id": {"source": "header.opportunity_id", "required": true},
+    "advertiser_category": {"source": "derived", "rule": "NE=Non Vendor, else=Vendor"},
+    "account_manager": {"source": "header.account_manager", "required": true},
+    "account_executive": {"source": "header.account_executive", "required": true},
+    "product_line": {"source": "header.product_category"},
+    "currency": {"source": "constant", "value": "INR"},
+    "po_number": {"source": "header.po_number", "required": true},
+    "timezone": {"source": "constant", "value": "Asia/Kolkata"},
+    "start_date_time": {"source": "header.campaign_start_date", "format": "D-MMM h:mm A"},
+    "end_date_time": {"source": "header.campaign_end_date", "format": "D-MMM h:mm A"},
+    "portfolio": {"source": "constant", "value": "Ungrouped"}
+  },
+  "sheet_4_order_details": {
+    "package_number": {"source": "line_item_index + 1"},
+    "product_type": {"source": "line_item.deal_type"},
+    "product_package": {"source": "line_item.package"},
+    "name": {"source": "derived", "rule": "campaign_name + _Pkg{N}"},
+    "start_date_time": {"source": "line_item.start_date", "format": "D-MMM h:mm A"},
+    "end_date_time": {"source": "line_item.end_date", "format": "D-MMM h:mm A"},
+    "requested_budget": {"source": "line_item.estimated_cost"},
+    "takeover_percentage": {"source": "line_item.sov_percentage", "condition": "only if SOV"},
+    "order_rate": {"source": "packages_cpm.rate lookup", "condition": "only if CPM"},
+    "audience_targeting": {"source": "line_item.audience_type"},
+    "audience_tag": {"source": "audience_codes lookup"},
+    "targeting": {"source": "line_item.segment_string"},
+    "frequency_cap": {"source": "line_item.frequency_type"},
+    "frequency_value": {"source": "line_item.frequency_value"},
+    "pacing_profile": {"source": "line_item.pacing_profile"},
+    "pacing_catchup_boost": {"source": "line_item.pacing_catchup_boost"},
+    "primary_goal": {"source": "header.primary_goal"},
+    "primary_goal_value": {"source": "header.primary_goal_value"}
+  },
+  "sheet_6_asin_list": {"asins": {"source": "asins array", "note": "One ASIN per row"}}
+}
+
+
+fastapi==0.104.1
+uvicorn==0.24.0
+sqlalchemy==2.0.23
+pydantic==2.5.2
+python-multipart==0.0.6
+httpx==0.25.2
+python-jose[cryptography]==3.3.0
+aiofiles==23.2.1
+
+"""Application configuration"""
+import os
+
+class Settings:
+    APP_NAME = "Campaign Intake Tool"
+    VERSION = "1.0.0"
+    DEBUG = os.getenv("DEBUG", "False").lower() == "true"
+    DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./campaign_intake.db")
+    MIDWAY_AUTH_URL = os.getenv("MIDWAY_AUTH_URL", "https://midway-auth.amazon.com")
+    MIDWAY_CLIENT_ID = os.getenv("MIDWAY_CLIENT_ID", "campaign-intake-tool")
+    SLACK_WEBHOOK_URL = os.getenv("SLACK_WEBHOOK_URL", "")
+    SLACK_CHANNEL = "#dvas-ops-intake"
+    ADOPS_GROUPS = ["dvas-adops", "dvas-ops-team"]
+
+settings = Settings()
+
+
+"""FastAPI Application Entry Point"""
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from app.config import settings
+from app.routes import submissions, adops, config_routes
+from app.db.database import Base, engine
+
+Base.metadata.create_all(bind=engine)
+
+app = FastAPI(title=settings.APP_NAME, version=settings.VERSION)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.include_router(submissions.router, prefix="/api/submissions", tags=["AM Submissions"])
+app.include_router(adops.router, prefix="/api/adops", tags=["Ad Ops Dashboard"])
+app.include_router(config_routes.router, prefix="/api/config", tags=["Configuration"])
+
+@app.get("/api/health")
+def health_check():
+    return {"status": "healthy", "version": settings.VERSION}
+
+
+"""Database setup - SQLAlchemy"""
+from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
+from app.config import settings
+
+engine = create_engine(settings.DATABASE_URL, connect_args={"check_same_thread": False})
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+Base = declarative_base()
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+
+
+
+
+"""Midway Authentication"""
+from fastapi import Depends, HTTPException, Request
+from app.config import settings
+
+async def get_current_user(request: Request):
+    """Extract user from Midway token/cookie"""
+    if settings.DEBUG:
+        return {
+            "alias": "varun",
+            "name": "Varun",
+            "email": "varun@amazon.com",
+            "groups": ["dvas-adops", "dvas-ops-team"]
+        }
+    token = request.headers.get("Authorization", "").replace("Bearer ", "")
+    if not token:
+        raise HTTPException(status_code=401, detail="Not authenticated")
+    # Production: validate with Midway
+    raise HTTPException(status_code=401, detail="Invalid token")
+
+def require_adops(user: dict = Depends(get_current_user)):
+    """Require Ad Ops group membership"""
+    if not any(g in settings.ADOPS_GROUPS for g in user.get("groups", [])):
+        raise HTTPException(status_code=403, detail="Ad Ops access required")
+    return user
+
+
+
+
+"""SQLAlchemy Models"""
+from sqlalchemy import Column, String, Integer, Float, DateTime, JSON, Text
+from sqlalchemy.sql import func
+from app.db.database import Base
+import uuid
+from datetime import datetime
+
+def generate_id():
+    return f"SUB-{datetime.now().strftime('%Y%m%d')}-{uuid.uuid4().hex[:6].upper()}"
+
+class Submission(Base):
+    __tablename__ = "submissions"
+    
+    id = Column(String, primary_key=True, default=generate_id)
+    status = Column(String, default="Ready for Ad Ops")
+    assigned_to = Column(String, nullable=True)
+    
+    # Header fields
+    category = Column(String, nullable=False)
+    advertiser = Column(String, nullable=False)
+    client = Column(String)
+    product_category = Column(String)
+    campaign_objective = Column(String)
+    campaign_name = Column(String, nullable=False)
+    creative_type = Column(String)
+    landing_page = Column(String)
+    campaign_start_date = Column(DateTime)
+    campaign_end_date = Column(DateTime)
+    event_type = Column(String)
+    event_name = Column(String)
+    budget = Column(Float)
+    primary_goal = Column(String)
+    primary_goal_value = Column(String)
+    secondary_goal = Column(String)
+    secondary_goal_value = Column(String)
+    opportunity_id = Column(String)
+    po_number = Column(String)
+    account_executive = Column(String)
+    account_manager = Column(String)
+    ne_sub_category = Column(String)
+    ne_pl_code = Column(String)
+    is_test_campaign = Column(String, default="N")
+    
+    # JSON fields
+    line_items_json = Column(JSON)
+    asins_json = Column(JSON)
+    csd_output_json = Column(JSON)
+    comments_json = Column(JSON, default=list)
+    
+    # Metadata
+    submitted_by = Column(String)
+    submitted_at = Column(DateTime, server_default=func.now())
+    updated_at = Column(DateTime, onupdate=func.now())
+
+"""Pydantic Schemas"""
+from pydantic import BaseModel
+from typing import Optional, List
+from datetime import datetime
+
+class LineItemSchema(BaseModel):
+    inventory: Optional[str] = "O&O"
+    screen: Optional[str] = "Mobile"
+    channel: Optional[str] = "Amazon.in"
+    deal_type: str
+    package: str
+    placements: Optional[str] = ""
+    start_date: Optional[str] = None
+    end_date: Optional[str] = None
+    ad_type_size: Optional[str] = ""
+    audience_type: Optional[str] = ""
+    audience_code: Optional[str] = ""
+    segment_string: Optional[str] = ""
+    frequency_type: Optional[str] = "Default Uncapped Frequency"
+    frequency_value: Optional[str] = None
+    sov_percentage: Optional[int] = None
+    rate: Optional[float] = None
+    impressions: Optional[int] = None
+    estimated_cost: Optional[float] = None
+    pacing_profile: Optional[str] = "Even"
+    pacing_catchup_boost: Optional[str] = "No"
+
+class SubmissionCreate(BaseModel):
+    category: str
+    advertiser: str
+    client: Optional[str] = ""
+    product_category: Optional[str] = ""
+    campaign_objective: Optional[str] = ""
+    campaign_name: str
+    creative_type: Optional[str] = ""
+    landing_page: Optional[str] = ""
+    campaign_start_date: str
+    campaign_end_date: str
+    event_type: str
+    event_name: str
+    budget: float
+    primary_goal: Optional[str] = ""
+    primary_goal_value: Optional[str] = ""
+    secondary_goal: Optional[str] = None
+    secondary_goal_value: Optional[str] = None
+    opportunity_id: Optional[str] = ""
+    po_number: Optional[str] = ""
+    account_executive: Optional[str] = ""
+    account_manager: Optional[str] = ""
+    ne_sub_category: Optional[str] = None
+    ne_pl_code: Optional[str] = None
+    is_test_campaign: Optional[str] = "N"
+    line_items: List[LineItemSchema]
+    asins: List[str] = []
+
+class AssignRequest(BaseModel):
+    assigned_to: str
+
+class StatusUpdateRequest(BaseModel):
+    status: str
+    comment: Optional[str] = ""
+
+class CommentRequest(BaseModel):
+    message: str
+    comment_type: str = "general"
+
+
+
+"""AM-facing submission routes"""
+from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.orm import Session
+from app.db.database import get_db
+from app.auth.midway import get_current_user
+from app.models.submission import Submission, generate_id
+from app.schemas.submission import SubmissionCreate
+from app.services.transformer import CSDTransformer
+from app.services.validator import validate_submission
+from app.services.notification import notify_adops_new_submission
+from datetime import datetime
+
+router = APIRouter()
+transformer = CSDTransformer()
+
+@router.post("/", status_code=201)
+async def create_submission(data: SubmissionCreate, db: Session = Depends(get_db), user: dict = Depends(get_current_user)):
+    """AM submits a new campaign"""
+    warnings = validate_submission(data.dict())
+    csd_output = transformer.transform(data.dict())
+    
+    submission = Submission(
+        id=generate_id(),
+        status="Ready for Ad Ops",
+        category=data.category,
+        advertiser=data.advertiser,
+        client=data.client,
+        product_category=data.product_category,
+        campaign_objective=data.campaign_objective,
+        campaign_name=data.campaign_name,
+        creative_type=data.creative_type,
+        landing_page=data.landing_page,
+        campaign_start_date=datetime.fromisoformat(data.campaign_start_date),
+        campaign_end_date=datetime.fromisoformat(data.campaign_end_date),
+        event_type=data.event_type,
+        event_name=data.event_name,
+        budget=data.budget,
+        primary_goal=data.primary_goal,
+        primary_goal_value=data.primary_goal_value,
+        secondary_goal=data.secondary_goal,
+        secondary_goal_value=data.secondary_goal_value,
+        opportunity_id=data.opportunity_id,
+        po_number=data.po_number,
+        account_executive=data.account_executive,
+        account_manager=data.account_manager,
+        ne_sub_category=data.ne_sub_category,
+        ne_pl_code=data.ne_pl_code,
+        is_test_campaign=data.is_test_campaign,
+        line_items_json=[li.dict() for li in data.line_items],
+        asins_json=data.asins,
+        csd_output_json=csd_output,
+        submitted_by=user["alias"],
+    )
+    
+    db.add(submission)
+    db.commit()
+    db.refresh(submission)
+    await notify_adops_new_submission(submission)
+    
+    return {"id": submission.id, "status": submission.status, "campaign_name": submission.campaign_name, "warnings": warnings}
+
+@router.get("/")
+def list_submissions(status: str = None, db: Session = Depends(get_db), user: dict = Depends(get_current_user)):
+    """List AM's own submissions"""
+    query = db.query(Submission).filter(Submission.submitted_by == user["alias"])
+    if status:
+        query = query.filter(Submission.status == status)
+    return query.order_by(Submission.submitted_at.desc()).all()
+
+@router.get("/{submission_id}")
+def get_submission(submission_id: str, db: Session = Depends(get_db), user: dict = Depends(get_current_user)):
+    sub = db.query(Submission).filter(Submission.id == submission_id).first()
+    if not sub:
+        raise HTTPException(status_code=404, detail="Submission not found")
+    return sub
+
+"""Ad Ops dashboard routes"""
+from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.orm import Session
+from app.db.database import get_db
+from app.auth.midway import require_adops
+from app.models.submission import Submission
+from app.schemas.submission import AssignRequest, StatusUpdateRequest, CommentRequest
+from app.services.notification import notify_am_status_update
+from datetime import datetime
+
+router = APIRouter()
+
+@router.get("/stats")
+def get_dashboard_stats(db: Session = Depends(get_db), user: dict = Depends(require_adops)):
+    total = db.query(Submission).count()
+    pending = db.query(Submission).filter(Submission.status == "Ready for Ad Ops").count()
+    in_progress = db.query(Submission).filter(Submission.status == "In Progress").count()
+    clarification = db.query(Submission).filter(Submission.status == "Clarification Needed").count()
+    completed = db.query(Submission).filter(Submission.status == "Completed").count()
+    return {"total": total, "pending": pending, "in_progress": in_progress, "clarification": clarification, "completed": completed}
+
+@router.get("/submissions")
+def get_all_submissions(status: str = None, category: str = None, event_type: str = None, assigned_to: str = None, db: Session = Depends(get_db), user: dict = Depends(require_adops)):
+    query = db.query(Submission)
+    if status: query = query.filter(Submission.status == status)
+    if category: query = query.filter(Submission.category == category)
+    if event_type: query = query.filter(Submission.event_type == event_type)
+    if assigned_to: query = query.filter(Submission.assigned_to == assigned_to)
+    return query.order_by(Submission.submitted_at.desc()).all()
+
+@router.get("/submissions/{submission_id}")
+def get_submission_detail(submission_id: str, db: Session = Depends(get_db), user: dict = Depends(require_adops)):
+    sub = db.query(Submission).filter(Submission.id == submission_id).first()
+    if not sub: raise HTTPException(status_code=404, detail="Not found")
+    return sub
+
+@router.patch("/submissions/{submission_id}/assign")
+async def assign_submission(submission_id: str, data: AssignRequest, db: Session = Depends(get_db), user: dict = Depends(require_adops)):
+    sub = db.query(Submission).filter(Submission.id == submission_id).first()
+    if not sub: raise HTTPException(status_code=404, detail="Not found")
+    sub.assigned_to = data.assigned_to
+    if sub.status == "Ready for Ad Ops": sub.status = "In Progress"
+    db.commit()
+    return {"message": "Assigned", "assigned_to": data.assigned_to, "status": sub.status}
+
+@router.patch("/submissions/{submission_id}/status")
+async def update_status(submission_id: str, data: StatusUpdateRequest, db: Session = Depends(get_db), user: dict = Depends(require_adops)):
+    sub = db.query(Submission).filter(Submission.id == submission_id).first()
+    if not sub: raise HTTPException(status_code=404, detail="Not found")
+    sub.status = data.status
+    if data.comment:
+        comments = sub.comments_json or []
+        comments.append({"author": user["alias"], "message": data.comment, "type": "status_change", "timestamp": datetime.now().isoformat()})
+        sub.comments_json = comments
+    db.commit()
+    await notify_am_status_update(sub)
+    return {"message": "Status updated", "status": sub.status}
+
+@router.post("/submissions/{submission_id}/comments")
+async def add_comment(submission_id: str, data: CommentRequest, db: Session = Depends(get_db), user: dict = Depends(require_adops)):
+    sub = db.query(Submission).filter(Submission.id == submission_id).first()
+    if not sub: raise HTTPException(status_code=404, detail="Not found")
+    comments = sub.comments_json or []
+    comments.append({"author": user["alias"], "message": data.message, "comment_type": data.comment_type, "timestamp": datetime.now().isoformat()})
+    sub.comments_json = comments
+    if data.comment_type == "clarification": sub.status = "Clarification Needed"
+    db.commit()
+    return {"message": "Comment added", "comments": sub.comments_json}
+
+
+"""Configuration endpoints - serve dropdown data to frontend"""
+import json, os
+from fastapi import APIRouter
+
+router = APIRouter()
+CONFIG_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "config")
+
+def load_config(filename):
+    with open(os.path.join(CONFIG_DIR, filename)) as f:
+        return json.load(f)
+
+@router.get("/dropdowns")
+def get_dropdowns():
+    categories = load_config("categories.json")
+    goals = load_config("goals_kpis.json")
+    pacing = load_config("pacing_frequency.json")
+    audiences = load_config("audience_codes.json")
+    ne = load_config("ne_config.json")
+    return {
+        "categories": [c["code"] for c in categories["categories"]],
+        "category_details": categories["categories"],
+        "primary_goals": goals["primary_goals"],
+        "secondary_goals": goals["secondary_goals"],
+        "campaign_objectives": goals["campaign_objectives"],
+        "pacing_profiles": pacing["pacing_profiles"],
+        "frequency_types": pacing["frequency_types"],
+        "frequency_presets": pacing["frequency_presets"],
+        "audience_types": audiences["audience_types"],
+        "ne_sub_categories": ne["ne_sub_categories"],
+        "ne_pl_codes": ne["ne_pl_codes"]
+    }
+
+@router.get("/packages")
+def get_packages():
+    cpm = load_config("packages_cpm.json")
+    sov = load_config("packages_sov.json")
+    return {"cpm": cpm["packages"], "sov": sov["packages"]}
+
+
+
+
+"""CSD Transformer - The BRAIN of the tool
+Converts media plan input into CSD-ready output (Sheets 3, 4, 6)"""
+import json, os
+from datetime import datetime
+
+CONFIG_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "config")
+
+class CSDTransformer:
+    def __init__(self):
+        self.audience_codes = self._load("audience_codes.json")["audience_types"]
+        self.cpm_packages = self._load("packages_cpm.json")["packages"]
+        self.sov_packages = self._load("packages_sov.json")["packages"]
+        self.field_map = self._load("csd_field_map.json")
+        self.audience_map = {a["type"]: a["code"] for a in self.audience_codes}
+        self.rate_map = {p["name"]: p["rate"] for p in self.cpm_packages}
+
+    def _load(self, filename):
+        with open(os.path.join(CONFIG_DIR, filename)) as f:
+            return json.load(f)
+
+    def transform(self, data: dict) -> dict:
+        return {
+            "campaign_details": self._build_campaign_details(data),
+            "order_details": self._build_order_details(data),
+            "asin_list": data.get("asins", [])
+        }
+
+    def _build_campaign_details(self, data: dict) -> dict:
+        return {
+            "basic_info": {
+                "campaign_name": data.get("campaign_name", ""),
+                "campaign_type": "Billable",
+                "salesforce_opp_id": data.get("opportunity_id", ""),
+                "portfolio": "Ungrouped"
+            },
+            "account_details": {
+                "account_manager": data.get("account_manager", ""),
+                "account_executive": data.get("account_executive", ""),
+                "advertiser_category": "Non Vendor" if data.get("category") == "NE" else "Vendor",
+                "product_line": data.get("product_category", "")
+            },
+            "billing_details": {"currency": "INR", "po_number": data.get("po_number", "")},
+            "schedule": {
+                "timezone": "Asia/Kolkata",
+                "start_date_time": self._format_datetime(data.get("campaign_start_date")),
+                "end_date_time": self._format_datetime(data.get("campaign_end_date"))
+            }
+        }
+
+    def _build_order_details(self, data: dict) -> list:
+        line_items = data.get("line_items", [])
+        orders = []
+        for i, li in enumerate(line_items[:25]):
+            item = li if isinstance(li, dict) else li.dict()
+            deal_type = item.get("deal_type", "")
+            package_name = item.get("package", "")
+            audience_type = item.get("audience_type", "")
+            order = {
+                "package_number": i + 1,
+                "product_type": deal_type,
+                "product_package": package_name,
+                "start_date_time": self._format_datetime(item.get("start_date")),
+                "end_date_time": self._format_datetime(item.get("end_date")),
+                "requested_budget": item.get("estimated_cost", ""),
+                "takeover_percentage": item.get("sov_percentage", "") if deal_type == "SOV" else "",
+                "order_rate": self.rate_map.get(package_name, 0) if deal_type == "CPM" else "",
+                "audience_targeting": audience_type,
+                "audience_tag": self.audience_map.get(audience_type, ""),
+                "targeting": item.get("segment_string", ""),
+                "frequency_cap": item.get("frequency_type", ""),
+                "frequency_value": item.get("frequency_value", ""),
+                "pacing_profile": item.get("pacing_profile", "Even"),
+                "pacing_catchup_boost": item.get("pacing_catchup_boost", "No"),
+                "primary_goal": data.get("primary_goal", ""),
+                "primary_goal_value": data.get("primary_goal_value", "")
+            }
+            orders.append(order)
+        return orders
+
+    def _format_datetime(self, dt_value) -> str:
+        if not dt_value: return ""
+        months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+        if isinstance(dt_value, str):
+            try: dt_value = datetime.fromisoformat(dt_value.replace("Z", "+00:00"))
+            except: return dt_value
+        hour = dt_value.hour % 12 or 12
+        ampm = "AM" if dt_value.hour < 12 else "PM"
+        return f"{dt_value.day}-{months[dt_value.month-1]} {hour}:{dt_value.minute:02d} {ampm}"
+
+
+"""Submission Validator"""
+from datetime import datetime
+
+def validate_submission(data: dict) -> list:
+    warnings = []
+    start = data.get("campaign_start_date", "")
+    end = data.get("campaign_end_date", "")
+    if start and end:
+        try:
+            s = datetime.fromisoformat(start)
+            e = datetime.fromisoformat(end)
+            if e <= s: warnings.append({"level": "error", "field": "campaign_end_date", "message": "End date must be after start date"})
+            if s < datetime.now(): warnings.append({"level": "warning", "field": "campaign_start_date", "message": "Start date is in the past"})
+        except: pass
+    
+    budget = data.get("budget", 0)
+    line_items = data.get("line_items", [])
+    line_total = sum(li.get("estimated_cost", 0) or 0 for li in line_items)
+    if line_total > 0 and abs(line_total - budget) > 1:
+        warnings.append({"level": "warning", "field": "budget", "message": f"Line item total ({line_total}) != header budget ({budget})"})
+    
+    if data.get("category") == "NE":
+        if not data.get("ne_sub_category"): warnings.append({"level": "warning", "field": "ne_sub_category", "message": "NE campaigns should have a sub-category"})
+        if not data.get("ne_pl_code"): warnings.append({"level": "warning", "field": "ne_pl_code", "message": "NE campaigns should have a PL code"})
+    
+    for i, li in enumerate(line_items):
+        if li.get("deal_type") == "SOV" and not li.get("sov_percentage"):
+            warnings.append({"level": "error", "field": f"line_items[{i}].sov_percentage", "message": "SOV packages require a takeover percentage"})
+    return warnings
+
+
+"""Notification service - Slack alerts"""
+import httpx
+from app.config import settings
+
+async def notify_adops_new_submission(submission):
+    if not settings.SLACK_WEBHOOK_URL: return
+    message = {
+        "channel": settings.SLACK_CHANNEL,
+        "text": f"📥 *New Campaign Submission*\n*{submission.campaign_name}*\nCategory: {submission.category} | Event: {submission.event_type} - {submission.event_name}\nBudget: INR {submission.budget:,.0f} | Lines: {len(submission.line_items_json)}\nSubmitted by: {submission.submitted_by}\nID: `{submission.id}`"
+    }
+    async with httpx.AsyncClient() as client:
+        await client.post(settings.SLACK_WEBHOOK_URL, json=message)
+
+async def notify_am_status_update(submission):
+    if not settings.SLACK_WEBHOOK_URL: return
+    emoji = {"Completed": "✅", "In Progress": "🔄", "Clarification Needed": "❓"}.get(submission.status, "📋")
+    message = {"text": f"{emoji} *Campaign Status Update*\n*{submission.campaign_name}*\nStatus: {submission.status}\nID: `{submission.id}`"}
+    async with httpx.AsyncClient() as client:
+        await client.post(settings.SLACK_WEBHOOK_URL, json=message)
+
+
 
