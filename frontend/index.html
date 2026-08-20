@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Intake Tool | IN DVAS Ops</title>
+    <style>
+        :root { --primary: #232f3e; --accent: #ff9900; --accent-hover: #e88a00; --success: #067d62; --error: #d13212; --bg: #f5f7fa; --card: #fff; --border: #e3e6ea; --text: #16191f; --muted: #687078; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Amazon Ember', sans-serif; background: var(--bg); color: var(--text); }
+        .header { background: var(--primary); color: white; padding: 16px 32px; display: flex; justify-content: space-between; align-items: center; }
+        .header h1 { font-size: 18px; }
+        .header .user { font-size: 13px; opacity: 0.8; }
+        .tabs { display: flex; background: white; border-bottom: 2px solid var(--border); padding: 0 32px; }
+        .tab { padding: 12px 24px; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; color: var(--muted); }
+        .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+        .container { max-width: 1100px; margin: 24px auto; padding: 0 24px; }
+        .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 24px; margin-bottom: 20px; }
+        .card h2 { font-size: 16px; margin-bottom: 16px; color: var(--primary); border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .form-grid.three { grid-template-columns: 1fr 1fr 1fr; }
+        .field { display: flex; flex-direction: column; gap: 4px; }
+        .field label { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; }
+        .field label .req { color: var(--error); }
+        .field select, .field input, .field textarea { padding: 8px 12px; border: 1px solid var(--border); border-radius: 4px; font-size: 14px; }
+        .field select:focus, .field input:focus { border-color: var(--accent); outline: none; }
+        .btn { padding: 10px 20px; border-radius: 4px; font-weight: 600; cursor: pointer; border: none; font-size: 14px; }
+        .btn-primary { background: var(--accent); color: white; }
+        .btn-primary:hover { background: var(--accent-hover); }
+        .btn-secondary { background: white; border: 1px solid var(--border); color: var(--text); }
+        .btn-add { background: #eef6ff; color: #0073bb; border: 1px dashed #0073bb; width: 100%; padding: 12px; margin-top: 12px; }
+        .line-item { background: #f9fafb; border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin: 12px 0; position: relative; }
+        .line-item .number { position: absolute; top: -10px; left: 12px; background: var(--accent); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; }
+        .line-item .remove { position: absolute; top: 8px; right: 12px; background: none; border: none; color: var(--error); cursor: pointer; font-size: 18px; }
+        .actions { display: flex; gap: 12px; justify-content: flex-end; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border); }
+        .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+        .chip { background: #eef6ff; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-family: monospace; }
+        .success-msg { text-align: center; padding: 48px; }
+        .success-msg .icon { font-size: 48px; margin-bottom: 16px; }
+        .success-msg h2 { color: var(--success); margin-bottom: 8px; }
+        .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+        .stat-card { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 16px; text-align: center; }
+        .stat-card .number { font-size: 28px; font-weight: 700; color: var(--accent); }
+        .stat-card .label { font-size: 12px; color: var(--muted); margin-top: 4px; }
+        .queue-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--border); }
+        .queue-item:last-child { border-bottom: none; }
+        .badge { padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+        .badge-pending { background: #fff3e0; color: #e65100; }
+        .badge-progress { background: #e3f2fd; color: #1565c0; }
+        .badge-done { background: #e8f5e9; color: #2e7d32; }
+        .hidden { display: none; }
+        .csd-preview { background: #1e1e1e; color: #d4d4d4; padding: 16px; border-radius: 8px; font-family: monospace; font-size: 12px; white-space: pre-wrap; max-height: 400px; overflow-y: auto; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📋 Campaign Intake Tool</h1>
+        <div class="user">👤 varun@amazon.com | IN DVAS Ops</div>
+    </div>
+    
+    <div class="tabs">
+        <div class="tab active" onclick="showTab('intake')">New Campaign</div>
+        <div class="tab" onclick="showTab('submissions')">My Submissions</div>
+        <div class="tab" onclick="showTab('dashboard')">Ad Ops Dashboard</div>
+    </div>
+
+    <!-- TAB 1: INTAKE FORM -->
+    <div id="tab-intake" class="container">
+        <div class="card">
+            <h2>📌 Campaign Header</h2>
+            <div class="form-grid">
+                <div class="field">
+                    <label>Category <span class="req">*</span></label>
+                    <select id="category" onchange="onCategoryChange()">
+                        <option value="">Select...</option>
+                        <option value="CPG">CPG - Consumer Packaged Goods</option>
+                        <option value="OHL">OHL - Online & Hardlines</option>
+                        <option value="SF">SF - Softlines & Fashion</option>
+                        <option value="NE">NE - Non-Endemic</option>
+                        <option value="CEPC - LAF">CEPC - Large Appliances & Furniture</option>
+                        <option value="CEPC - WL">CEPC - Wireless & Laptops</option>
+                        <option value="CEPC - PC">CEPC - Personal Computing</option>
+                        <option value="CEPC - CE">CEPC - Consumer Electronics</option>
+                        <option value="CEPC - HE">CEPC - Home Entertainment</option>
+                        <option value="CEPC - WB">CEPC - Wearables</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>Advertiser <span class="req">*</span></label>
+                    <select id="advertiser"><option value="">Select category first...</option></select>
+                </div>
+                <div class="field">
+                    <label>Campaign Name <span class="req">*</span></label>
+                    <input type="text" id="campaign_name" placeholder="e.g., Samsung_GalaxyS25_Launch_Sept2026">
+                </div>
+                <div class="field">
+                    <label>Campaign Objective</label>
+                    <select id="objective">
+                        <option value="">Select...</option>
+                        <option value="AWR">Awareness</option>
+                        <option value="CON">Consideration</option>
+                        <option value="COV">Conversion</option>
+                        <option value="NCA">New Customer Acquisition</option>
+                        <option value="LEADGEN">Lead Generation</option>
+                        <option value="RETENTION">Retention / Repeat Purchase</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>Start Date <span class="req">*</span></label>
+                    <input type="date" id="start_date">
+                </div>
+                <div class="field">
+                    <label>End Date <span class="req">*</span></label>
+                    <input type="date" id="end_date">
+                </div>
+                <div class="field">
+                    <label>Event Type <span class="req">*</span></label>
+                    <select id="event_type">
+                        <option value="">Select...</option>
+                        <option value="BAU">BAU</option>
+                        <option value="HVE">HVE</option>
+                        <option value="ART">ART</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>Event Name</label>
+                    <input type="text" id="event_name" placeholder="e.g., Great Indian Festival">
+                </div>
+                <div class="field">
+                    <label>Total Budget (INR) <span class="req">*</span></label>
+                    <input type="number" id="budget" placeholder="e.g., 5000000">
+                </div>
+                <div class="field">
+                    <label>Primary Goal</label>
+                    <select id="primary_goal">
+                        <option value="">Select...</option>
+                        <option>Viewability rate</option>
+                        <option>Click through rate (CTR)</option>
+                        <option>Detail Page view rate (DPVR)</option>
+                        <option>Cost per detail page view (CPDPV)</option>
+                        <option>Purchase rate</option>
+                        <option>Return on ad spend (ROAS)</option>
+                        <option>Video completion rate (VCR)</option>
+                        <option>Cost per completed view (CPCV)</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>PO Number</label>
+                    <input type="text" id="po_number" placeholder="PO-XXXX">
+                </div>
+                <div class="field">
+                    <label>Opportunity ID</label>
+                    <input type="text" id="opp_id" placeholder="SF-XXXX">
+                </div>
+            </div>
+            <!-- NE Fields -->
+            <div id="ne-fields" class="hidden" style="margin-top: 16px;">
+                <div class="form-grid">
+                    <div class="field">
+                        <label>NE Sub-Category <span class="req">*</span></label>
+                        <select id="ne_sub_cat">
+                            <option value="">Select...</option>
+                            <option>Credit Card</option><option>Personal Loan</option><option>Insurance</option>
+                            <option>Mutual Funds</option><option>Auto</option><option>Telecom</option>
+                            <option>Travel</option><option>Food Delivery</option><option>EdTech</option>
+                            <option>Streaming</option><option>Real Estate</option><option>Government</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>PL Code <span class="req">*</span></label>
+                        <select id="ne_pl_code">
+                            <option value="">Select...</option>
+                            <option>Amazon Bill Payments and Recharges-1820</option>
+                            <option>Subscribe and Save-1830</option>
+                            <option>Amazon Fresh-1825</option>
+                            <option>Amazon Prime-1810</option>
+                            <option>Amazon Pay-1840</option>
+                            <option>Kindle-1850</option>
+                            <option>Audible-1855</option>
+                            <option>Amazon miniTV-1860</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LINE ITEMS -->
+        <div class="card">
+            <h2>📦 Line Items (Packages)</h2>
+            <div id="line-items-container"></div>
+            <button class="btn btn-add" onclick="addLineItem()">+ Add Line Item</button>
+        </div>
+
+        <!-- ASINs -->
+        <div class="card">
+            <h2>🔗 ASINs</h2>
+            <div class="field">
+                <label>Paste ASINs (comma or newline separated)</label>
+                <textarea id="asins" rows="3" placeholder="B09XYZ1234, B08ABC5678..."></textarea>
+            </div>
+            <div class="chips" id="asin-chips"></div>
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="actions">
+            <button class="btn btn-secondary" onclick="previewCSD()">👁️ Preview CSD Output</button>
+            <button class="btn btn-primary" onclick="submitCampaign()">🚀 Submit to Ad Ops</button>
+        </div>
+
+        <!-- CSD PREVIEW -->
+        <div id="csd-preview" class="card hidden">
+            <h2>📄 CSD Output Preview</h2>
+            <div class="csd-preview" id="csd-content"></div>
+        </div>
+
+        <!-- SUCCESS -->
+        <div id="success-msg" class="card hidden">
+            <div class="success-msg">
+                <div class="icon">✅</div>
+                <h2>Campaign Submitted Successfully!</h2>
+                <p id="success-id"></p>
+                <p style="color: var(--muted); margin-top: 8px;">Ad Ops team has been notified via Slack</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 2: MY SUBMISSIONS -->
+    <div id="tab-submissions" class="container hidden">
+        <div class="card">
+            <h2>My Submissions</h2>
+            <div class="queue-item">
+                <div><strong>Samsung_GalaxyS25_Sept2026</strong><br><span style="font-size:12px;color:var(--muted)">CEPC-WL | HVE | Submitted 2 hrs ago</span></div>
+                <span class="badge badge-progress">In Progress</span>
+            </div>
+            <div class="queue-item">
+                <div><strong>HUL_Dove_Diwali_Oct2026</strong><br><span style="font-size:12px;color:var(--muted)">CPG | ART | Submitted 1 day ago</span></div>
+                <span class="badge badge-done">Completed</span>
+            </div>
+            <div class="queue-item">
+                <div><strong>HDFC_CreditCard_BAU_Aug2026</strong><br><span style="font-size:12px;color:var(--muted)">NE | BAU | Submitted 3 days ago</span></div>
+                <span class="badge badge-pending">Clarification Needed</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 3: AD OPS DASHBOARD -->
+    <div id="tab-dashboard" class="container hidden">
+        <div class="stats">
+            <div class="stat-card"><div class="number">12</div><div class="label">Total Submissions</div></div>
+            <div class="stat-card"><div class="number" style="color:var(--error)">4</div><div class="label">Ready for Ad Ops</div></div>
+            <div class="stat-card"><div class="number" style="color:#1565c0">5</div><div class="label">In Progress</div></div>
+            <div class="stat-card"><div class="number" style="color:var(--success)">3</div><div class="label">Completed</div></div>
+        </div>
+        <div class="card">
+            <h2>Submission Queue</h2>
+            <div class="queue-item">
+                <div><strong>Samsung_GalaxyS25_Sept2026</strong><br><span style="font-size:12px;color:var(--muted)">CEPC-WL | HVE | ₹50,00,000 | 8 line items</span></div>
+                <div><span class="badge badge-pending">Ready for Ad Ops</span> <button class="btn btn-secondary" style="padding:4px 10px;font-size:11px;margin-left:8px;">Assign to me</button></div>
+            </div>
+            <div class="queue-item">
+                <div><strong>Nike_EndOfSeason_Sept2026</strong><br><span style="font-size:12px;color:var(--muted)">SF | BAU | ₹12,00,000 | 4 line items</span></div>
+                <div><span class="badge badge-pending">Ready for Ad Ops</span> <button class="btn btn-secondary" style="padding:4px 10px;font-size:11px;margin-left:8px;">Assign to me</button></div>
+            </div>
+            <div class="queue-item">
+                <div><strong>Swiggy_Monsoon_Aug2026</strong><br><span style="font-size:12px;color:var(--muted)">NE | BAU | ₹8,00,000 | 3 line items</span></div>
+                <div><span class="badge badge-progress">In Progress</span> <span style="font-size:11px;color:var(--muted)">Assigned: priya@</span></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Advertiser data
+        const advertisers = {
+            "CPG": ["IN - Hindustan Unilever", "IN - P&G India", "IN - Nestle India", "IN - ITC Limited", "IN - Reckitt", "IN - Colgate-Palmolive", "IN - Marico", "IN - Dabur"],
+            "OHL": ["IN - Boat Lifestyle", "IN - Noise", "IN - Fastrack", "IN - Titan", "IN - Wildcraft"],
+            "SF": ["IN - Nike India", "IN - Adidas India", "IN - Puma India", "IN - Allen Solly", "IN - Van Heusen"],
+            "NE": ["IN - HDFC Bank", "IN - ICICI Bank", "IN - SBI", "IN - Bajaj Finance", "IN - Swiggy", "IN - Zomato", "IN - MakeMyTrip", "IN - OYO"],
+            "CEPC - LAF": ["IN - LG Electronics", "IN - Whirlpool", "IN - Havells", "IN - Godrej Appliances", "IN - Voltas"],
+            "CEPC - WL": ["IN - Samsung Electronics", "IN - Apple India", "IN - OnePlus", "IN - Xiaomi", "IN - Realme", "IN - Vivo", "IN - OPPO"],
+            "CEPC - PC": ["IN - HP India", "IN - Lenovo India", "IN - Dell India", "IN - ASUS India", "IN - Acer India"],
+            "CEPC - CE": ["IN - Sony India", "IN - JBL India", "IN - Bose India", "IN - Samsung Electronics"],
+            "CEPC - HE": ["IN - Samsung Electronics", "IN - LG Electronics", "IN - Sony India", "IN - TCL India"],
+            "CEPC - WB": ["IN - Apple India", "IN - Samsung Electronics", "IN - Boat Lifestyle", "IN - Noise", "IN - Fitbit India"]
+        };
+
+        const cpmPackages = [
+            {name: "AMZN IN Mobile Homepage Hero Package", rate: 210, size: "855x1368"},
+            {name: "AMZN IN Mobile Homepage BTF Package", rate: 100, size: "600x500"},
+            {name: "AMZN IN Mobile Homepage BTF Package - Non Endemic", rate: 200, size: "600x500"},
+            {name: "AMZN IN Mobile Homepage Cards Package", rate: 130, size: "600x500"},
+            {name: "AMZN IN Mobile Contextual Package", rate: 75, size: "600x500"},
+            {name: "AMZN IN MobileThankYou and Deals Package", rate: 100, size: "600x500"},
+            {name: "AMZN IN Desktop ATF Package", rate: 200, size: "970x250"},
+            {name: "AMZN IN Desktop Contextual Package", rate: 75, size: "300x250"},
+            {name: "AMZN IN Amazon Pay Package", rate: 150, size: "600x500"},
+            {name: "AMZN IN Fire TV Inline Home", rate: 100, size: "1920x1080"},
+            {name: "AMZN IN Fire TV Feature Rotator Home Guaranteed", rate: 250, size: "1920x1080"},
+            {name: "Reach (CPM): IMDb IN Cross-Screen ROS Package", rate: 75, size: "Various"}
+        ];
+
+        const sovPackages = [
+            {name: "Class 1: AMZN IN Mobile Window Display 1 SOV Package", size: "855x1368"},
+            {name: "Class 1: AMZN IN Mobile BTF SOV Package", size: "600x500"},
+            {name: "Class 1: AMZN IN Desktop ATF SOV Package", size: "970x250"},
+            {name: "Class 1: AMZN IN Fire TV Feature Rotator SOV Package", size: "1920x1080"}
+        ];
+
+        const audienceTypes = [
+            {type: "In-Market", code: "#IM#"},
+            {type: "Affinity", code: "#AFN#"},
+            {type: "Lifestyle", code: "#LS#"},
+            {type: "Competition Retargeting", code: "#CompRT#"},
+            {type: "Brand Views/Purchases", code: "#BrandRT#"},
+            {type: "Brand Purchasers", code: "#Repeat#"},
+            {type: "Contextual", code: "#Contextual#"},
+            {type: "SOV (No Audience)", code: "#Open#"}
+        ];
+
+        let lineItemCount = 0;
+
+        function showTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('[id^="tab-"]').forEach(t => t.classList.add('hidden'));
+            event.target.classList.add('active');
+            document.getElementById('tab-' + tab).classList.remove('hidden');
+        }
+
+        function onCategoryChange() {
+            const cat = document.getElementById('category').value;
+            const advSelect = document.getElementById('advertiser');
+            advSelect.innerHTML = '<option value="">Select...</option>';
+            if (advertisers[cat]) {
+                advertisers[cat].forEach(a => { advSelect.innerHTML += `<option value="${a}">${a}</option>`; });
+            }
+            document.getElementById('ne-fields').classList.toggle('hidden', cat !== 'NE');
+        }
+
+        function addLineItem() {
+            lineItemCount++;
+            const container = document.getElementById('line-items-container');
+            const div = document.createElement('div');
+            div.className = 'line-item';
+            div.id = `li-${lineItemCount}`;
+            
+            let pkgOptions = '<option value="">Select...</option>';
+            cpmPackages.forEach(p => { pkgOptions += `<option value="${p.name}">CPM | ${p.name} (₹${p.rate})</option>`; });
+            sovPackages.forEach(p => { pkgOptions += `<option value="${p.name}">SOV | ${p.name}</option>`; });
+
+            let audOptions = '<option value="">Select...</option>';
+            audienceTypes.forEach(a => { audOptions += `<option value="${a.type}">${a.type}</option>`; });
+
+            div.innerHTML = `
+                <div class="number">${lineItemCount}</div>
+                <button class="remove" onclick="removeLineItem(${lineItemCount})">✕</button>
+                <div class="form-grid three">
+                    <div class="field">
+                        <label>Deal Type <span class="req">*</span></label>
+                        <select><option>CPM</option><option>SOV</option></select>
+                    </div>
+                    <div class="field">
+                        <label>Package <span class="req">*</span></label>
+                        <select>${pkgOptions}</select>
+                    </div>
+                    <div class="field">
+                        <label>Audience Type</label>
+                        <select>${audOptions}</select>
+                    </div>
+                    <div class="field">
+                        <label>Start Date</label>
+                        <input type="date">
+                    </div>
+                    <div class="field">
+                        <label>End Date</label>
+                        <input type="date">
+                    </div>
+                    <div class="field">
+                        <label>Estimated Cost (INR)</label>
+                        <input type="number" placeholder="e.g., 500000">
+                    </div>
+                    <div class="field">
+                        <label>Pacing</label>
+                        <select><option>Even</option><option>Front-loaded</option><option>Back-loaded</option><option>ASAP</option></select>
+                    </div>
+                    <div class="field">
+                        <label>Frequency</label>
+                        <select><option>Default Uncapped</option><option>1/24hrs</option><option>2/24hrs</option><option>3/24hrs</option><option>5/24hrs</option><option>3/7days</option></select>
+                    </div>
+                    <div class="field">
+                        <label>SOV % (if SOV)</label>
+                        <select><option value="">N/A</option><option>10%</option><option>20%</option><option>30%</option><option>40%</option><option>50%</option><option>100%</option></select>
+                    </div>
+                </div>
+            `;
+            container.appendChild(div);
+        }
+
+        function removeLineItem(id) {
+            document.getElementById(`li-${id}`).remove();
+        }
+
+        function previewCSD() {
+            const csd = {
+                campaign_details: {
+                    campaign_name: document.getElementById('campaign_name').value || "Campaign_Name_Here",
+                    campaign_type: "Billable",
+                    advertiser_category: document.getElementById('category').value === "NE" ? "Non Vendor" : "Vendor",
+                    currency: "INR",
+                    timezone: "Asia/Kolkata",
+                    start_date: document.getElementById('start_date').value,
+                    end_date: document.getElementById('end_date').value,
+                    portfolio: "Ungrouped"
+                },
+                order_details: `[${lineItemCount} line item(s) will be mapped to CSD Sheet 4]`,
+                asin_list: document.getElementById('asins').value.split(/[,\n]/).filter(a => a.trim())
+            };
+            document.getElementById('csd-content').textContent = JSON.stringify(csd, null, 2);
+            document.getElementById('csd-preview').classList.remove('hidden');
+        }
+
+        function submitCampaign() {
+            const name = document.getElementById('campaign_name').value;
+            if (!name) { alert('Please fill in Campaign Name'); return; }
+            if (!document.getElementById('category').value) { alert('Please select a Category'); return; }
+            if (lineItemCount === 0) { alert('Please add at least one Line Item'); return; }
+            
+            const id = 'SUB-' + new Date().toISOString().slice(0,10).replace(/-/g,'') + '-' + Math.random().toString(36).substr(2,6).toUpperCase();
+            document.getElementById('success-id').textContent = `Submission ID: ${id}`;
+            document.getElementById('success-msg').classList.remove('hidden');
+            document.getElementById('csd-preview').classList.add('hidden');
+        }
+
+        // Add one line item by default
+        addLineItem();
+    </script>
+</body>
+</html>
+
