@@ -1,0 +1,28 @@
+{
+  "primary_goals": [
+    {"value": "Viewability rate", "description": "% of impressions viewable (IAB standard)"},
+    {"value": "Click through rate (CTR)", "description": "Clicks / Impressions"},
+    {"value": "Detail Page view rate (DPVR)", "description": "DPV / Impressions"},
+    {"value": "Cost per detail page view (CPDPV)", "description": "Spend / Detail Page Views"},
+    {"value": "Purchase rate", "description": "Purchases / Impressions"},
+    {"value": "Return on ad spend (ROAS)", "description": "Revenue / Ad Spend"},
+    {"value": "Video completion rate (VCR)", "description": "Completed views / Impressions"},
+    {"value": "Cost per completed view (CPCV)", "description": "Spend / Completed Views"}
+  ],
+  "secondary_goals": [
+    {"value": "Click through rate (CTR)", "description": "Clicks / Impressions"},
+    {"value": "Detail Page view rate (DPVR)", "description": "DPV / Impressions"},
+    {"value": "Cost per detail page view (CPDPV)", "description": "Spend / DPV"},
+    {"value": "Purchase rate", "description": "Purchases / Impressions"},
+    {"value": "Return on ad spend (ROAS)", "description": "Revenue / Ad Spend"},
+    {"value": "Subscribe & Save subscriptions", "description": "SnS subscriptions driven"}
+  ],
+  "campaign_objectives": [
+    {"code": "AWR", "name": "Awareness", "recommended_goal": "Viewability rate"},
+    {"code": "CON", "name": "Consideration", "recommended_goal": "Detail Page view rate (DPVR)"},
+    {"code": "COV", "name": "Conversion", "recommended_goal": "Purchase rate"},
+    {"code": "NCA", "name": "New Customer Acquisition", "recommended_goal": "Detail Page view rate (DPVR)"},
+    {"code": "LEADGEN", "name": "Lead Generation", "recommended_goal": "Click through rate (CTR)"},
+    {"code": "RETENTION", "name": "Retention / Repeat Purchase", "recommended_goal": "Purchase rate"}
+  ]
+}
