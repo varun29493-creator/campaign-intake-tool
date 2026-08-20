@@ -1,0 +1,15 @@
+{
+  "categories": [
+    {"code": "CPG", "name": "Consumer Packaged Goods", "advertisers": ["IN - Hindustan Unilever", "IN - P&G India", "IN - Nestle India", "IN - ITC Limited", "IN - Reckitt", "IN - Colgate-Palmolive", "IN - Marico", "IN - Dabur", "IN - Godrej Consumer", "IN - Emami"]},
+    {"code": "OHL", "name": "Online & Hardlines", "advertisers": ["IN - Boat Lifestyle", "IN - Noise", "IN - Fastrack", "IN - Titan", "IN - Wildcraft"]},
+    {"code": "SF", "name": "Softlines & Fashion", "advertisers": ["IN - Nike India", "IN - Adidas India", "IN - Puma India", "IN - Allen Solly", "IN - Van Heusen"]},
+    {"code": "NE", "name": "Non-Endemic", "advertisers": ["IN - HDFC Bank", "IN - ICICI Bank", "IN - SBI", "IN - Bajaj Finance", "IN - Swiggy", "IN - Zomato", "IN - MakeMyTrip", "IN - OYO"]},
+    {"code": "CEPC - LAF", "name": "CE/PC - Large Appliances & Furniture", "advertisers": ["IN - LG Electronics", "IN - Whirlpool", "IN - Havells", "IN - Godrej Appliances", "IN - Voltas"]},
+    {"code": "CEPC - WL", "name": "CE/PC - Wireless & Laptops", "advertisers": ["IN - Samsung Electronics", "IN - Apple India", "IN - OnePlus", "IN - Xiaomi", "IN - Realme", "IN - Vivo", "IN - OPPO", "IN - HP India", "IN - Lenovo India", "IN - Dell India"]},
+    {"code": "CEPC - PC", "name": "CE/PC - Personal Computing", "advertisers": ["IN - HP India", "IN - Lenovo India", "IN - Dell India", "IN - ASUS India", "IN - Acer India"]},
+    {"code": "CEPC - CE", "name": "CE/PC - Consumer Electronics", "advertisers": ["IN - Sony India", "IN - JBL India", "IN - Bose India", "IN - Samsung Electronics"]},
+    {"code": "CEPC - HE", "name": "CE/PC - Home Entertainment", "advertisers": ["IN - Samsung Electronics", "IN - LG Electronics", "IN - Sony India", "IN - TCL India"]},
+    {"code": "CEPC - WB", "name": "CE/PC - Wearables", "advertisers": ["IN - Apple India", "IN - Samsung Electronics", "IN - Boat Lifestyle", "IN - Noise", "IN - Fitbit India"]}
+  ]
+}
+
