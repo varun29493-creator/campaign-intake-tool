@@ -1,0 +1,16 @@
+{
+  "packages": [
+    {"name": "AMZN IN Mobile Homepage Hero Package", "rate": 210, "size": "Display|855x1368", "placements": ["WD 1"], "screen": "Mobile", "channel": "Amazon.in", "inventory": "O&O"},
+    {"name": "AMZN IN Mobile Homepage BTF Package", "rate": 100, "size": "Display|600x500", "placements": ["mBTF"], "screen": "Mobile", "channel": "Amazon.in", "inventory": "O&O"},
+    {"name": "AMZN IN Mobile Homepage BTF Package - Non Endemic", "rate": 200, "size": "Display|600x500", "placements": ["mBTF NE"], "screen": "Mobile", "channel": "Amazon.in", "inventory": "O&O"},
+    {"name": "AMZN IN Mobile Homepage Cards Package", "rate": 130, "size": "Display|600x500", "placements": ["mBTF"], "screen": "Mobile", "channel": "Amazon.in", "inventory": "O&O"},
+    {"name": "AMZN IN Mobile Contextual Package", "rate": 75, "size": "Display|600x500", "placements": ["mDetail", "mBrowse"], "screen": "Mobile", "channel": "Amazon.in", "inventory": "O&O"},
+    {"name": "AMZN IN MobileThankYou and Deals Package", "rate": 100, "size": "Display|600x500", "placements": ["mThankYou", "mDeals"], "screen": "Mobile", "channel": "Amazon.in", "inventory": "O&O"},
+    {"name": "AMZN IN Desktop ATF Package", "rate": 200, "size": "Display|970x250", "placements": ["dATF"], "screen": "Desktop", "channel": "Amazon.in", "inventory": "O&O"},
+    {"name": "AMZN IN Desktop Contextual Package", "rate": 75, "size": "Display|300x250", "placements": ["dDetail", "dBrowse"], "screen": "Desktop", "channel": "Amazon.in", "inventory": "O&O"},
+    {"name": "AMZN IN Amazon Pay Package", "rate": 150, "size": "Display|600x500", "placements": ["AmazonPay"], "screen": "Mobile", "channel": "Amazon.in", "inventory": "O&O"},
+    {"name": "AMZN IN Fire TV Inline Home", "rate": 100, "size": "Video|1920x1080", "placements": ["FTV_Inline"], "screen": "CTV", "channel": "Fire TV", "inventory": "O&O"},
+    {"name": "AMZN IN Fire TV Feature Rotator Home Guranteed", "rate": 250, "size": "Video|1920x1080", "placements": ["FTV_FR"], "screen": "CTV", "channel": "Fire TV", "inventory": "O&O"},
+    {"name": "Reach (CPM) : IMDb IN Cross-Screen ROS Package", "rate": 75, "size": "Display|300x250, Video|Various", "placements": ["IMDb_ROS"], "screen": "Cross-Screen", "channel": "IMDb", "inventory": "3P"}
+  ]
+}
